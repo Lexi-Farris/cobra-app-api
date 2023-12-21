@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+#attendance 
+get "/attendance" => "attendances#index"
+get "/attendance/:id" => "attendances#show"
+
+#favorites | full CRUD abilities 
+get "/favorite" => "favorites#index"
+
+
+#users | full CRUD abilities 
+
 end
