@@ -19,4 +19,13 @@ class FavoritesController < ApplicationController
     render :show
   end
 
+  def update
+    @favorite = Favorite.find_by(id: params[:id])
+    @favorite.update(
+      class_name: params[:class_name] || @favorite.class_name,
+      instructor_name: params[:instructor_name] || @favorite.instructor_name,
+      studio_name: params[:studio_name] || @favorite.studio_name,)
+      render :show
+  end
+
 end

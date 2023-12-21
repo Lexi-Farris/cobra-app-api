@@ -8,6 +8,7 @@ get "/attendance/:id" => "attendances#show"
 get "/favorite" => "favorites#index"
 get "/favorite/:id" => "favorites#show"
 post "/favorite" => "favorites#create"
+patch "favorite/:id" => "favorites#update"
 
 
 #users | full CRUD abilities 
