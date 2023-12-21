@@ -34,4 +34,11 @@ class FavoritesControllerTest < ActionDispatch::IntegrationTest
     assert_equal "Updated Class", data["class_name"]
   end
 
+  test "destroy" do 
+    assert_difference "Favorite.count", -1 do 
+      delete "/favorite/#{Favorite.first.id}.json"
+      assert_response 200
+    end
+  end
+
 end
