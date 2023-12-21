@@ -14,7 +14,7 @@ class AttendancesControllerTest < ActionDispatch::IntegrationTest
     assert_response 200
 
     data = JSON.parse(response.body)
-    assert_equal ["vinyassa", "river"]
+    assert_equal ["class_name", "instructor_name"], data.keys
   end
   
   
