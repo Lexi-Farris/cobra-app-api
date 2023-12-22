@@ -11,6 +11,7 @@ post "/favorite" => "favorites#create"
 patch "favorite/:id" => "favorites#update"
 delete "favorite/:id" => "favorites#destroy"
 
-#users | full CRUD abilities 
+#users 
+post "/users" => "users#create"
 
 end
