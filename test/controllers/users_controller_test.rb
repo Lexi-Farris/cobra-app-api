@@ -9,4 +9,14 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   end
 
 
+  test "update" do 
+    user = User.first
+    patch "/users/#{user.id}.json", params: {name: "Updated name"}
+    assert_response 200
+
+    data = JSON.parse(response.body)
+    assert_equal "Updated name", data["name"]
+  end
+  
+
 end

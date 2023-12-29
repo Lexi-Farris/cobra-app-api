@@ -14,5 +14,5 @@ delete "favorite/:id" => "favorites#destroy"
 #users 
 post "/users" => "users#create"
 post "/sessions" => "sessions#create"
-
+patch "/users/:id" => "users#update"
 end
