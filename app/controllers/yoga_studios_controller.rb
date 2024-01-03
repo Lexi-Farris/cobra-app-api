@@ -11,10 +11,10 @@ class YogaStudiosController < ApplicationController
   end
 
   def show
-    id = params[:place_id]
-    response = HTTP.get("https://maps.googleapis.com/maps/api/place/details/json?place_id=#{id}&fields=name,formatted_address,photo,url&key=#{Rails.application.credentials.google_search_api[:search_api_key]}")
+    id = params[:id]
+    response = HTTP.get("https://maps.googleapis.com/maps/api/place/details/json?place_id=#{id}&fields=name,formatted_address,website,place_id&key=#{Rails.application.credentials.google_search_api[:search_api_key]}")
     @yoga_studio = response.parse(:json)
-    render json: data.as_json 
+    render json: @yoga_studio 
   end
 
 end
