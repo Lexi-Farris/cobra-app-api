@@ -15,4 +15,8 @@ delete "favorite/:id" => "favorites#destroy"
 post "/users" => "users#create"
 post "/sessions" => "sessions#create"
 patch "/users/:id" => "users#update"
+
+#yoga studios
+get "/yoga" => "yoga_studios#index"
+
 end
