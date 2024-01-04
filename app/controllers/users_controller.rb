@@ -7,7 +7,7 @@ class UsersController < ApplicationController
       password_confirmation: params[:password_confirmation],
       city: params[:city],
       state: params[:state],
-      zipcode: params[:zipcode]
+      
     )
     if user.save 
       render json: {message: "User created."}, status: :created
@@ -22,7 +22,6 @@ class UsersController < ApplicationController
         name: params[:name] || @user.name, 
         email: params[:email] || @user.email,
         password_digest: params[:password_digest] || @user.password_digest,
-        zipcode: params[:zipcode] || @user.password,
         city: params[:city] || @user.city,
         state: params[:state] || @user.state
       )
