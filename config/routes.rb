@@ -20,4 +20,6 @@ patch "/users/:id" => "users#update"
 get "/yoga" => "yoga_studios#index"
 get "/yoga/:id" => "yoga_studios#show"
 
+
+#saved studios
 end
