@@ -22,4 +22,6 @@ get "/yoga/:id" => "yoga_studios#show"
 
 
 #saved studios
+get "/saved" => "saved_studios#index"
+post "/saved/:id" => "saved_studios#show"
 end

@@ -5,4 +5,8 @@ class SavedStudiosController < ApplicationController
     render json: current_user.saved_studios
   end
 
+  def show
+    @saved_studio = saved_studio.find_by(id: params[:id])
+    render:show
+  end
 end
