@@ -6,13 +6,16 @@ class SavedStudiosController < ApplicationController
   end
 
   def create
+    pp params[:studio]
     @saved_studio = SavedStudio.create(
-      name: params[:name],
-      address: params[:address],
-      studio_id: params[studio_id],
-      website: params[:website],
+      name: params[:studio][:name],
+      address: params[:studio][:address],
+      # studio_id: params[:studio][:studio_id],
+      website: params[:studio][:website],
+      user_id: current_user.id 
+
     )
-    if @saved_studio.save
+    if @saved_studio.valid?
       render json: { message: 'Studio saved successfully' }, status: :created
     else
      
@@ -23,8 +26,9 @@ class SavedStudiosController < ApplicationController
 
 
   def show
-    @saved_studio = saved_studio.find_by(id: params[:id])
-    render:show
+    @saved_studio = SavedStudio.find_by(id: params[:id])
+    pp @saved_studio
+    render :show
   end
 
   def destroy

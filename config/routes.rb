@@ -24,7 +24,7 @@ post "/yoga" => "yoga_studios#create"
 
 #saved studios
 get "/saved" => "saved_studios#index"
-post "/saved/:id" => "saved_studios#show"
+post "/saved" => "saved_studios#create"
 delete "/saved/:id" => "saved_studios#destroy"
 
 end
