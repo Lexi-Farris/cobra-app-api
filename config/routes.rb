@@ -19,9 +19,12 @@ patch "/users/:id" => "users#update"
 #yoga studios
 get "/yoga" => "yoga_studios#index"
 get "/yoga/:id" => "yoga_studios#show"
+post "/yoga" => "yoga_studios#create"
 
 
 #saved studios
 get "/saved" => "saved_studios#index"
 post "/saved/:id" => "saved_studios#show"
+delete "/saved/:id" => "saved_studios#destroy"
+
 end
