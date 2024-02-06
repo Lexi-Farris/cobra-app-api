@@ -27,7 +27,6 @@ class SavedStudiosController < ApplicationController
 
   def show
     @saved_studio = SavedStudio.find_by(id: params[:id])
-    pp @saved_studio
     render :show
   end
 
